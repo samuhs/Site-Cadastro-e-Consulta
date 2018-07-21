@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Consulta</title>
+	<link rel="stylesheet" type="text/css" href="css_pediatro.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="box">
+		
+			<h1> Pesquisa <h1>
+				<form action = "consulta.php" method = "POST">
+					
+					<div id="Consulta_id" class="collapse" style ="display: none">
+					<input type="text" name="Consulta_id" size="40" pattern="[0-9]+$">
+					</div>
+
+					<div id="Consulta_cpf" class="collapse" style="display: none;">
+					<input type="text" name="Consulta_cpf" size="40" placeholder="ex: XXX.XXX.XXX-XX" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}+$">
+					</div>
+
+					<div id="Consulta_nome" class="collapse" style="display: none;">
+					<input type="text" name="Consulta_nome" size="40" pattern="[A-Za-z]+$">
+					</div>
+
+					<div id="Consulta_salario" class="collapse" style="display: none;">
+					<input type="text" name="Consulta_salario" size="40" pattern="[0-9]+$">
+					</div>
+					</div>
+
+				    <select id = 'filtro' name ='filtro' onchange="optionCheck()">
+							<option></option>
+							<option value="id">Codigo Funcionario</option>
+						  <option value="cpf">CPF</option>
+						  <option value="nome">Nome</option>
+						  <option value="salario">Salario</option>
+					</select> 
+
+					<script type="text/javascript">
+						function optionCheck(){
+							var option = document.getElementById("filtro").value;
+							if(option == "id"){
+								document.getElementById("Consulta_id").style.display = "block";
+							}else{
+							  document.getElementById("Consulta_id").style.display = "none";
+							}
+					
+							if(option == "cpf"){
+								document.getElementById("Consulta_cpf").style.display = "block";
+							}else{
+							  document.getElementById("Consulta_cpf").style.display = "none";
+							}
+
+							if(option == "nome"){
+								document.getElementById("Consulta_nome").style.display = "block";
+								
+							}else{
+							  document.getElementById("Consulta_nome").style.display = "none";
+							}
+
+							if(option == "salario"){
+								document.getElementById("Consulta_salario").style.display = "block";
+							}else{
+							  document.getElementById("Consulta_salario").style.display = "none";
+							}
+						}
+					</script>
+				
+
+					<input type = "submit" value = "Pesquisar"> 
+					</form>
+				
+				<br>
+				<a href="/"><button class="bt">Pagina Inicial</button></a>
+				
+				
+
+	</div>
+</div>
+		
+</body>
+</html>
+
